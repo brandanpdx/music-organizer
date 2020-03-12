@@ -17,9 +17,9 @@ namespace MusicOrganizer.Models
       Albums = new List<Album>{};
     }
 
-    public static void ClearAll()
+    public void ClearAll()
     {
-      _instances.Clear();
+      Albums.Clear();
     }
 
     public static List<Artist> GetAll()
@@ -30,6 +30,11 @@ namespace MusicOrganizer.Models
     public static Artist Find(int searchId)
     {
       return _instances[searchId-1];
+    }
+
+    public void AddAlbum(Album album)
+    {
+      Albums.Add(album);
     }
   }
 }

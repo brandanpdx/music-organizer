@@ -1,0 +1,11 @@
+<h1>Album Details: </h1>
+
+<h2>@Model["album"].Name</h2>
+<h3>Artist: @Model["artist"].Name</h3>
+
+<form action='/artist/@Model["artist"].Id/album/delete' method="post">
+  <input id="artistId" name="artistId" type="hidden" value='@Model["artist"].Id'>
+  <button type="submit">Click to delete this album</button>
+</form>
+<a href='/artist/@Model["artist"].Id/album/new'>Add another album</a>
+<a href='/artist'>View all artists</a>
